@@ -33,12 +33,12 @@ jobs:
         run: npm ci
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@20
+        run: npm install -g @angular/cli@21
 
       - name: Install Angular build tooling
         run: |
-          npm install -g @angular/cli@20
-          npm install @angular/build@20 --no-save
+          npm install -g @angular/cli@21
+          npm install @angular/build@21 --no-save
 
       - name: Build Angular app
         run: npx ng build --configuration production
