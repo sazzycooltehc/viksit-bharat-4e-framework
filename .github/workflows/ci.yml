@@ -1,4 +1,4 @@
-# CI & Deploy (TypeScript-only)
+# CI & Deploy Angular App to GitHub Pages
 name: CI & Deploy to GitHub Pages
 
 on:
@@ -32,33 +32,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: TypeScript type check
-        run: npm run type-check
-
-      # GitHub Pages requires at least one static file
-      - name: Prepare Pages content
-        run: |
-          mkdir -p dist
-          cat <<EOF > dist/index.html
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <title>Viksit Bharat 4E Framework</title>
-            </head>
-            <body>
-              <h1>Deployment successful</h1>
-            </body>
-          </html>
-          EOF
+      - name: Build Angular app
+        run: npx ng build --configuration production
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/<PROJECT_NAME>   # 👈 MUST match angular.json
 
   deploy:
     runs-on: ubuntu-latest
