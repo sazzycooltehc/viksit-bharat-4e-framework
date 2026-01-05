@@ -19,6 +19,6 @@
     "lib": ["es2022", "dom"],
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/index.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "index.tsx"],
   "exclude": ["node_modules"]
 }
