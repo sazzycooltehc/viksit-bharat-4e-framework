@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "es2022",
@@ -19,6 +18,6 @@
     "lib": ["es2022", "dom"],
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "index.tsx"],
+  "include": ["src/**/*.ts"],   // <-- remove any .tsx references
   "exclude": ["node_modules"]
 }
