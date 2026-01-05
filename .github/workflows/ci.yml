@@ -35,6 +35,10 @@ jobs:
       - name: Install Angular CLI
         run: npm install -g @angular/cli@20
 
+      - name: Install Angular build tooling
+        run: |
+          npm install -g @angular/cli@20
+          npm install @angular/build@20 --no-save
 
       - name: Build Angular app
         run: npx ng build --configuration production
