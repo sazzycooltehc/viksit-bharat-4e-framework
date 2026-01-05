@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@21
+        run: npm install -g @angular/cli@20
 
 
       - name: Build Angular app
