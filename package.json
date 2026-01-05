@@ -22,6 +22,6 @@
     "@angular/platform-browser": "~21.0.6",
     "@google/genai": "^1.34.0",
     "rxjs": "^7.8.2",
-    "typescript": "~5.7.2"
+    "typescript": "~5.9.0"
   }
 }
