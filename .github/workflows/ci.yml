@@ -35,16 +35,27 @@ jobs:
       - name: TypeScript type check
         run: npm run type-check
 
-      # GitHub Pages needs static files — create minimal output
+      # GitHub Pages requires at least one static file
       - name: Prepare Pages content
         run: |
           mkdir -p dist
-          echo "<h1>Deployment successful</h1>" > dist/index.html
+          cat <<EOF > dist/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <title>Viksit Bharat 4E Framework</title>
+            </head>
+            <body>
+              <h1>Deployment successful</h1>
+            </body>
+          </html>
+          EOF
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
