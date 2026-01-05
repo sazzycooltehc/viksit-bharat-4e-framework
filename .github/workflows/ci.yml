@@ -52,7 +52,7 @@ jobs:
         # This app has no build step, so we upload the entire directory.
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: package.json
 
   # Deployment job
   deploy:
