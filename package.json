@@ -3,8 +3,17 @@
   "name": "viksit-bharat-framework-app",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
+   "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
     "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@angular/common": "~21.0.6",
+    "@angular/compiler": "~21.0.6",
+    "@angular/core": "~21.0.6",
+    "@angular/platform-browser": "~21.0.6",
+    "rxjs": "^7.8.2"
   },
   "devDependencies": {
     "@angular/common": "~21.0.6",
